@@ -2,7 +2,7 @@ console.log("Welcome to Spotify");
 
 //Initialize the variables
 let songIndex = 0;
-let audioElement = new Audio('Songs/1.mp3');
+let audioElement = new Audio('1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
@@ -10,16 +10,16 @@ let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {songName: "Let Me Love You by DJ Snake - ft. Justin Bieber", filepath: "Songs/1.mp3", coverpath: "Covers/1.jpeg"},
-    {songName: "Photograph by Ed Sheeran", filepath: "Songs/2.mp3", coverpath: "Covers/2.jpeg"},
-    {songName: "Hips Don't Lie by Shakira - ft. Wyclef Jean", filepath: "Songs/3.mp3", coverpath: "Covers/3.jpeg"},
-    {songName: "Back to December by Taylor Swift", filepath: "Songs/4.mp3", coverpath: "Covers/4.jpeg"},
-    {songName: "People You Know by Selena Gomez", filepath: "Songs/5.mp3", coverpath: "Covers/5.jpeg"},
-    {songName: "Getaway Car by Taylor Swift", filepath: "Songs/6.mp3", coverpath: "Covers/6.jpeg"},
-    {songName: "Calm Down by Rema and Selena Gomez", filepath: "Songs/7.mp3", coverpath: "Covers/7.jpeg"},
-    {songName: "Style by Taylor Swift", filepath: "Songs/8.mp3", coverpath: "Covers/8.jpeg"},
-    {songName: "Pink Venom by Blackpink", filepath: "Songs/9.mp3", coverpath: "Covers/9.jpeg"},
-    {songName: "All Too Well by Taylor Swift", filepath: "Songs/10.mp3", coverpath: "Covers/10.jpeg"}
+    {songName: "Let Me Love You by DJ Snake - ft. Justin Bieber", filepath: "1.mp3", coverpath: "1.jpeg"},
+    {songName: "Photograph by Ed Sheeran", filepath: "2.mp3", coverpath: "2.jpeg"},
+    {songName: "Hips Don't Lie by Shakira - ft. Wyclef Jean", filepath: "3.mp3", coverpath: "3.jpeg"},
+    {songName: "Back to December by Taylor Swift", filepath: "4.mp3", coverpath: "4.jpeg"},
+    {songName: "People You Know by Selena Gomez", filepath: "5.mp3", coverpath: "5.jpeg"},
+    {songName: "Getaway Car by Taylor Swift", filepath: "6.mp3", coverpath: "6.jpeg"},
+    {songName: "Calm Down by Rema and Selena Gomez", filepath: "7.mp3", coverpath: "7.jpeg"},
+    {songName: "Style by Taylor Swift", filepath: "8.mp3", coverpath: "8.jpeg"},
+    {songName: "Pink Venom by Blackpink", filepath: "9.mp3", coverpath: "9.jpeg"},
+    {songName: "All Too Well by Taylor Swift", filepath: "10.mp3", coverpath: "10.jpeg"}
 ]
 
 songItems.forEach((element,i)=>{
@@ -68,7 +68,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-play-circle');
         e.target.classList.add('fa-pause-circle');
-        audioElement.src = `Songs/${songIndex+1}.mp3`;
+        audioElement.src = `${songIndex+1}.mp3`;
         masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
@@ -85,7 +85,7 @@ document.getElementById('next').addEventListener('click', ()=>{
     else{
         songIndex += 1;
     }
-    audioElement.src = `Songs/${songIndex+1}.mp3`;
+    audioElement.src = `${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
@@ -101,7 +101,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
     else{
         songIndex -= 1;
     }
-    audioElement.src = `Songs/${songIndex+1}.mp3`;
+    audioElement.src = `${songIndex+1}.mp3`;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
